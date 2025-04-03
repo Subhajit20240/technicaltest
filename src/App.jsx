@@ -8,9 +8,11 @@ import NoteDetails from "../src/pages/NoteDetail";
 
 function App() {
   return (
+   
     <ThemeProvider>
       <NotesProvider>
         <Router>
+          
           <div className="min-h-screen">
             <Navbar />
             <Routes>
