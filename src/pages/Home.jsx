@@ -25,7 +25,7 @@ const Home = () => {
               <p className="text-md font-medium text-gray-500">{note.subtitle}</p>
               <p className="text-gray-600 flex-grow overflow-auto break-words">{note.content}</p>
               <div className="flex justify-between mt-4">
-                <Link to={`/note/${note.id}`} className="bg-green-500 text-white px-3 py-1 rounded">View</Link>
+                {/* <Link to={`/note/${note.id}`} className="bg-green-500 text-white px-3 py-1 rounded">View</Link> */}
                 <button onClick={() => deleteNote(note.id)} className="bg-red-500 text-white px-3 py-1 rounded">
                   Delete
                 </button>
