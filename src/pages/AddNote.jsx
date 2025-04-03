@@ -21,17 +21,10 @@ const AddNote = () => {
         <h2 className="text-2xl font-bold text-center mb-4">Add Your Note Here</h2>
         <form onSubmit={handleSubmit} className="flex flex-col">
           <input
-            type="text"
-            placeholder="Title"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            className="border border-gray-300 p-2 rounded mb-2"
+            type="text" placeholder="Title" value={title}  onChange={(e) => setTitle(e.target.value)}  className="border border-gray-300 p-2 rounded mb-2"
           />
           <textarea
-            placeholder="Content"
-            value={content}
-            onChange={(e) => setContent(e.target.value)}
-            className="border border-gray-300 p-2 rounded mb-2"
+            placeholder="Content"  value={content}  onChange={(e) => setContent(e.target.value)}  className="border border-gray-300 p-2 rounded mb-2"
           />
           <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-lg">
             Save Note
