@@ -1,0 +1,43 @@
+import { useContext, useState } from "react";
+import { NotesContext } from "../context/NotesContext";
+import { useNavigate } from "react-router-dom";
+
+const AddNote = () => {
+  const { addNote } = useContext(NotesContext);
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!title || !content) return;
+    addNote({ title, content });
+    navigate("/");
+  };
+
+  return (
+    <div className="w-3/4 bg-white shadow-md rounded-lg p-6">
+      <h2 className="text-2xl font-bold mb-4">Add Note</h2>
+      <form onSubmit={handleSubmit} className="flex flex-col">
+        <input
+          type="text"
+          placeholder="Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          className="border border-gray-300 p-2 rounded mb-2"
+        />
+        <textarea
+          placeholder="Content"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+          className="border border-gray-300 p-2 rounded mb-2"
+        />
+        <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded-lg">
+          Save Note
+        </button>
+      </form>
+    </div>
+  );
+};
+
+export default AddNote;
